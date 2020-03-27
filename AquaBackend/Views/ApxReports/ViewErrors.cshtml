@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "Ver errores";
+}
+
+
+<h3>Listado de errores al generar el reporte.</h3>
+A continuación se muestran los errores al emitir el reporte de APX:
+<br />
+
+@if (ViewBag.errorList != null)
+{
+    foreach (var item in ViewBag.errorList)
+    {
+        <cite>@item;</cite>
+        <br />
+    }
+    <br />
+    <a asp-controller="ApxReports" asp-action="ApxReports">Volver atrás</a>
+}

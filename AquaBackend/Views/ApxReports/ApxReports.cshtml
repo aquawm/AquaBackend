@@ -1,0 +1,64 @@
+﻿@model IEnumerable<AquaBackend.Models.ApxReports>
+@{
+    ViewData["Title"] = "Reportes APX";
+}
+
+<h3>Reportes de APX</h3>
+
+<form asp-controller="ApxReports" asp-action="ApxReports" method="post">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Portfolio</label>
+            @Html.DropDownList("portfolio", new SelectList(ViewBag.portfolios), new { @class = "form-control" })
+
+            <button class="btn btn-primary" type="submit" style="display: inline;">Buscar</button>
+        </div>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Portfolio
+            </th>
+            <th>
+                Reporte
+            </th>
+            <th>
+                Ultima Actualización
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Portfolio
+                </td>
+                <td>
+                    @item.Report
+                </td>
+                <td>
+                    @item.LastUpdate
+                </td>
+                <td>
+                    @*Ver Reporte*@
+                    <a class="btn btn-primary float-left" target="_blank" href="@Url.Action("ViewReport", "ApxReports", new { portfolio = item.Portfolio, report = item.Report })">
+                        Ver Reporte
+                    </a>
+                </td>
+                <td>
+                    @*Ver Errores*@
+                    <a class="btn-link" target="_blank" href="@Url.Action("ViewErrors", "ApxReports", new { portfolio = item.Portfolio, report = item.Report })">
+                        Ver Errores
+                    </a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
