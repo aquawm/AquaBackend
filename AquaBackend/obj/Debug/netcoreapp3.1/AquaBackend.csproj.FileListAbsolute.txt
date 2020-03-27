@@ -133,7 +133,6 @@ C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\bin\Debug\netcoreapp3.1\
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\AquaBackend.csprojAssemblyReference.cache
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\AquaBackend.csproj.CoreCompileInputs.cache
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\AquaBackend.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\AquaBackend.RazorAssemblyInfo.cache
@@ -150,6 +149,7 @@ C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\Razor\Views\Transactions\Transactions.cshtml.g.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\AquaBackend.RazorTargetAssemblyInfo.cache

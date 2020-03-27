@@ -1,8 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AquaBackend.Models
 {
+    [NotMapped]
     public class ApxReports
     {
         [Key]
