@@ -60,5 +60,6 @@ namespace AquaBackend.Models
 
         public String Comment { get; set; }
 
+        public int PortfolioTransactionID { get; set; }
     }
 }

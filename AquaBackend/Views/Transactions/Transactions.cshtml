@@ -4,18 +4,27 @@
     ViewData["Title"] = "Index";
 }
 
-<h3>Index</h3>
+<h3>Transacciones</h3>
+
 <form asp-controller="Transactions" asp-action="Transactions" method="post">
     <div class="row">
         <div class="col-md-3">
             <label>Portfolio</label>
             @Html.DropDownList("portfolio", new SelectList(ViewBag.portfolios), new { @class = "form-control" })
 
+            <label>Fecha Desde</label>
+            <input class="form-control" type="date" name="dateFrom" />
+
+            <label>Fecha Hasta</label>
+            <input class="form-control" type="date" name="dateTo" />
+
             <button class="btn btn-primary" type="submit" style="display: inline;">Buscar</button>
         </div>
     </div>
 </form>
-<table class="table">
+
+
+<table class="table table-striped">
     <thead>
         <tr>
             <th>
@@ -59,60 +68,68 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @if (Model != null)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PortfolioCode)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TranCodeLabel)
-                </td>
-                <td>
-                    @String.Format("{0}{1}", item.SecTypeCode1, item.PrincipalCurrencyCode1)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FullName1)
-                </td>
-                <td>
-                    @String.Format("{0}{1}", item.SecTypeCode2, item.PrincipalCurrencyCode2)
-                </td>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PortfolioCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TranCodeLabel)
+                    </td>
+                    <td>
+                        @String.Format("{0}{1}", item.SecTypeCode1, item.PrincipalCurrencyCode1)
+                    </td>
+                    <td>
+                        <span class="d-inline-block" data-toggle="tooltip" data-html="true" title="@Html.DisplayFor(modelItem => item.FullName1)">
+                            @Html.DisplayFor(modelItem => item.Symbol1)
+                        </span>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.FullName2)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TradeDate)
-                </td>
-                <td>
-                    @if (item.SettleDate > DateTime.Parse("1900-01-01"))
-                    {
-                        @Html.DisplayFor(modelItem => item.SettleDate)
-                    }
-                </td>
-                <td>
-                    @if (@item.Quantity > 0)
-                    {
-                        @Html.DisplayFor(modelItem => item.Quantity);
-                    }
-                </td>
-                <td>
-                    @if (item.TradeAmount > 0)
-                    {
-                        @Html.DisplayFor(modelItem => item.TradeAmount)
-                    }
-                </td>
-                <td>
-                    @if (item.UnitPrice > 0)
-                    {
-                        @Html.DisplayFor(modelItem => item.UnitPrice)
-                    }
+                    </td>
+                    <td>
+                        @String.Format("{0}{1}", item.SecTypeCode2, item.PrincipalCurrencyCode2)
+                    </td>
 
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Comment)
-                </td>
-            </tr>
+                    <td>
+                        <span class="d-inline-block" data-toggle="tooltip" data-html="true" title="@Html.DisplayFor(modelItem => item.FullName2)">
+                            @Html.DisplayFor(modelItem => item.Symbol2)
+                        </span>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TradeDate)
+                    </td>
+                    <td>
+                        @if (item.SettleDate > DateTime.Parse("1900-01-01"))
+                        {
+                            @Html.DisplayFor(modelItem => item.SettleDate)
+                        }
+                    </td>
+                    <td>
+                        @if (@item.Quantity > 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.Quantity);
+                        }
+                    </td>
+                    <td>
+                        @if (item.TradeAmount > 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.TradeAmount)
+                        }
+                    </td>
+                    <td>
+                        @if (item.UnitPrice > 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.UnitPrice)
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comment)
+                    </td>
+                </tr>
+            }
         }
+
     </tbody>
 </table>
