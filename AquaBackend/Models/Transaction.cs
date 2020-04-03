@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AquaBackend.Models
 {
@@ -16,7 +12,7 @@ namespace AquaBackend.Models
         [DisplayName("Portfolio")]
         public String PortfolioCode { get; set; }
 
-        [DisplayName("Codigo")]       
+        [DisplayName("Codigo")]
         public String TransactionCode { get; set; }
 
         [DisplayName("Type")]
@@ -30,7 +26,7 @@ namespace AquaBackend.Models
 
         [DisplayName("Security")]
         public String FullName1 { get; set; }
-        
+
         public String PrincipalCurrencyCode1 { get; set; }
 
         [DisplayName("Source Security Type")]
@@ -41,12 +37,12 @@ namespace AquaBackend.Models
 
         [DisplayName("Source Security")]
         public String FullName2 { get; set; }
-                
+
         public String PrincipalCurrencyCode2 { get; set; }
-        
+
         [DataType(DataType.Date)]
         public DateTime TradeDate { get; set; }
-        
+
         [DataType(DataType.Date)]
         public DateTime SettleDate { get; set; }
 

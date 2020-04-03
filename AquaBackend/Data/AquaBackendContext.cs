@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using AquaBackend.Models;
 
 public class AquaBackendContext : DbContext
 {
@@ -15,4 +14,8 @@ public class AquaBackendContext : DbContext
     public DbSet<AquaBackend.Models.ApxReports> ApxReports { get; set; }
 
     public DbSet<AquaBackend.Models.Transaction> Transaction { get; set; }
+
+    public DbSet<AquaBackend.Models.Client> Client { get; set; }
+
+    public DbSet<AquaBackend.Models.MarketSummary> MarketSummary { get; set; }
 }

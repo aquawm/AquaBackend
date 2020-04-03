@@ -27,6 +27,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Transactions" asp-action="Transactions">Transacciones</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="MarketSummaries" asp-action="ViewMarketSummaries">Resumen del Mercado</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -36,11 +39,26 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+        
     </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - AquaBackend
+            &copy; 2020 - AquaBackend - Accesos Directos:
+
+
+            <a class="btn-link" target="_blank" href="http://192.168.1.8/wiki/index.php/P%C3%A1gina_principal">
+                Aqua Wiki
+            </a>
+            |
+            <a class="btn-link" target="_blank" href="https://apx.aquawm.com/apxlogin">
+                APX
+            </a>
+            |
+            <a class="btn-link" target="_blank" href="http://192.168.1.9:82">
+                Aqua Private Equity
+            </a>
+
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

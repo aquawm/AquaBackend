@@ -18,6 +18,33 @@ namespace AquaBackend.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("AquaBackend.Models.Client", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Account")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Bank")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Holder")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Portfolio")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Client");
+                });
+
             modelBuilder.Entity("AquaBackend.Models.Transaction", b =>
                 {
                     b.Property<int>("Id")
@@ -36,6 +63,9 @@ namespace AquaBackend.Migrations
 
                     b.Property<string>("PortfolioCode")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PortfolioTransactionID")
+                        .HasColumnType("int");
 
                     b.Property<string>("PrincipalCurrencyCode1")
                         .HasColumnType("nvarchar(max)");
