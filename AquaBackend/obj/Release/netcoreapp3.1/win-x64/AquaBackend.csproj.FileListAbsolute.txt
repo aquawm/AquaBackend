@@ -146,7 +146,6 @@ C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\bin\Release\netcoreapp3.1\win-x64\RestSharp.dll
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\win-x64\Razor\Views\Clients\Create.cshtml.g.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\win-x64\Razor\Views\Clients\Delete.cshtml.g.cs
-C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\win-x64\Razor\Views\Clients\Details.cshtml.g.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\win-x64\Razor\Views\Clients\Edit.cshtml.g.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\win-x64\Razor\Views\Clients\Index.cshtml.g.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\win-x64\Razor\Views\MarketSummaries\ViewMarketSummaries.cshtml.g.cs

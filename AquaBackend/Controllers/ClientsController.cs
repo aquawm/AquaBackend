@@ -16,9 +16,17 @@ namespace AquaBackend.Controllers
         }
 
         // GET: Clients
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Client.ToListAsync());
+            if (searchString == null)
+            {
+                return View(await _context.Client.OrderBy(c => c.Name).ToListAsync());
+            }
+            else
+            {
+                ViewBag.searchString = searchString;
+                return View(await _context.Client.Where(c => c.Name.Contains(searchString) || c.Portfolio.Contains(searchString) || c.Account.Contains(searchString)).OrderBy(c => c.Name).ToListAsync());
+            }
         }
 
         // GET: Clients/Details/5
