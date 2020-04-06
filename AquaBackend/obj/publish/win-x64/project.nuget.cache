@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GPgDzdTvv+8kThMcgU6wysobbp9bBLYp2reQ3Ndrlm3fJyWlZQFQiX+xe3IcVMEN30lPbwC7ZY7PH++RbwT0xw==",
+  "dgSpecHash": "GkBod291m2x83HCZp7Ms7NUzz6/raL4CnSKsLKA+TheTuDv1ESSIhnl3rRM/PdOiooxym+dbN79lhbi/tVyQWQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\lmachado\\source\\Aquawm\\AquaBackend\\AquaBackend\\AquaBackend.csproj",
   "expectedPackageFiles": [
@@ -57,6 +57,7 @@
     "C:\\Users\\lmachado\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\lmachado\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\lmachado\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
+    "C:\\Users\\lmachado\\.nuget\\packages\\restsharp\\106.6.10\\restsharp.106.6.10.nupkg.sha512",
     "C:\\Users\\lmachado\\.nuget\\packages\\runtime.any.system.collections\\4.3.0\\runtime.any.system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\lmachado\\.nuget\\packages\\runtime.any.system.diagnostics.tools\\4.3.0\\runtime.any.system.diagnostics.tools.4.3.0.nupkg.sha512",
     "C:\\Users\\lmachado\\.nuget\\packages\\runtime.any.system.diagnostics.tracing\\4.3.0\\runtime.any.system.diagnostics.tracing.4.3.0.nupkg.sha512",

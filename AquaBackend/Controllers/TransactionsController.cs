@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace AquaBackend.Controllers
@@ -17,10 +17,7 @@ namespace AquaBackend.Controllers
         // GET: Transactions
         public IActionResult Transactions(String portfolio, Nullable<DateTime> dateFrom, Nullable<DateTime> dateTo)
         {
-            var portfolios = _context.Transaction.Where(p => p.PortfolioCode != null).OrderBy(p => p.PortfolioCode).Select(p => p.PortfolioCode).Distinct();
-            ViewBag.portfolios = portfolios;
-
-
+            ViewBag.portfolios = new SelectList(_context.Client.OrderBy(c => c.Name), "Portfolio", "CompleteName");
 
             if (dateFrom == null)
             {
@@ -30,7 +27,6 @@ namespace AquaBackend.Controllers
             {
                 dateTo = DateTime.Today;
             }
-
 
             if (portfolio == null)
             {

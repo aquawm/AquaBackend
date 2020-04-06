@@ -44,3 +44,26 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200331204455_initial2')
+BEGIN
+    CREATE TABLE [Client] (
+        [Id] int NOT NULL IDENTITY,
+        [Name] nvarchar(max) NULL,
+        [Portfolio] nvarchar(max) NULL,
+        [Bank] nvarchar(max) NULL,
+        [Account] nvarchar(max) NULL,
+        [Holder] nvarchar(max) NULL,
+        CONSTRAINT [PK_Client] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200331204455_initial2')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200331204455_initial2', N'3.1.1');
+END;
+
+GO
+

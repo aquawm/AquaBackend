@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -23,5 +24,14 @@ namespace AquaBackend.Models
 
         [DisplayName("Titular")]
         public String Holder { get; set; }
+
+        [HiddenInput(DisplayValue = false)]
+        public string CompleteName
+        {
+            get
+            {
+                return string.Format("{0} - {1} ({2})", Name, Bank, Portfolio);
+            }
+        }
     }
 }

@@ -7,11 +7,13 @@
 <h3>Transacciones</h3>
 
 <form asp-controller="Transactions" asp-action="Transactions" method="post">
-    <div class="row">
-        <div class="col-md-3">
+    <div class="container"
+        <div class="row">
+        <div class="col-md-6">
             <label>Portfolio</label>
-            @Html.DropDownList("portfolio", new SelectList(ViewBag.portfolios), new { @class = "form-control" })
-
+            @Html.DropDownList("portfolio", new SelectList(ViewBag.portfolios, "Value", "Text"), new { @class = "form-control" })
+        </div>
+        <div class="col-md-3">
             <label>Fecha Desde</label>
             <input class="form-control" type="date" name="dateFrom" />
 
@@ -19,8 +21,11 @@
             <input class="form-control" type="date" name="dateTo" />
 
             <button class="btn btn-primary" type="submit" style="display: inline;">Buscar</button>
+
+        </div>
         </div>
     </div>
+
 </form>
 
 
