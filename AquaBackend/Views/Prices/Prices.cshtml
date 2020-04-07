@@ -1,0 +1,90 @@
+﻿@model IEnumerable<AquaBackend.Models.Price>
+
+@{
+    ViewData["Title"] = "Precios";
+}
+
+<h1>Precios</h1>
+
+<form asp-controller="Prices" asp-action="Prices" method="post">
+    <div class="container">
+
+        <div class="col-md-6">
+            <input class="form-control" name="searchString" type="text" placeholder="Busque aqui..." value=@ViewBag.searchString autofocus>
+        </div>
+        <div class="col-md-3">
+            <label>Fecha Desde</label>
+            <input class="form-control" type="date" name="dateFrom" value=@ViewBag.dateFrom />
+
+            <label>Fecha Hasta</label>
+            <input class="form-control" type="date" name="dateTo" value=@ViewBag.dateTo />
+
+            <button class="btn btn-primary" type="submit" style="display: inline;">Buscar</button>
+        </div>
+    </div>
+
+</form>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Security Type
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Symbol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RiskCountryCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FromDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThruDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaturityDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @String.Format("{0}{1}", item.SecTypeBaseCode, item.PrincipalCurrencyCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Symbol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PriceValue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RiskCountryCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FromDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThruDate)
+                </td>
+                <td>
+                    @if (item.MaturityDate > DateTime.Parse("1900-01-01"))
+                    {
+                        @Html.DisplayFor(modelItem => item.MaturityDate)
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

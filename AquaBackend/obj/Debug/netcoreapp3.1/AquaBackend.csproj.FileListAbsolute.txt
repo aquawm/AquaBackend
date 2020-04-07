@@ -168,3 +168,4 @@ C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\AquaBackend.genruntimeconfig.cache
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\AquaBackend.csprojAssemblyReference.cache
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\Razor\Views\MarketSummaries\ViewMarketSummaries.cshtml.g.cs
+C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Debug\netcoreapp3.1\Razor\Views\Prices\Prices.cshtml.g.cs
