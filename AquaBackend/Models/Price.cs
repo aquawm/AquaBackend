@@ -31,5 +31,7 @@ namespace AquaBackend.Models
 
         [DisplayName("Price")]
         public float PriceValue { get; set; }
+
+        public float InterestRate { get; set; }
     }
 }

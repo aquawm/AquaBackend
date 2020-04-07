@@ -65,6 +65,11 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.FullName)
+                    @if(item.InterestRate != -1)
+                    {
+                        <br />
+                    <label style="font-size:small">Interest Rate: @item.InterestRate % </label>
+                    }
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.PriceValue)
