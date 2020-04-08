@@ -12,7 +12,7 @@ public class AquaBackendContext : DbContext
 
     public DbSet<AquaBackend.Models.File> File { get; set; }
 
-    public DbSet<AquaBackend.Models.ApxReports> ApxReports { get; set; }
+    public DbSet<AquaBackend.Models.Reports> ApxReports { get; set; }
 
     public DbSet<AquaBackend.Models.Transaction> Transaction { get; set; }
 

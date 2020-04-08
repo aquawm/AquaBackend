@@ -1,11 +1,11 @@
-﻿@model IEnumerable<AquaBackend.Models.ApxReports>
+﻿@model IEnumerable<AquaBackend.Models.Reports>
 @{
-    ViewData["Title"] = "Reportes APX";
+    ViewData["Title"] = "Reportes de Porfolios";
 }
 
-<h3>Reportes de APX</h3>
+<h3>Reportes de Portfolios</h3>
 
-<form asp-controller="ApxReports" asp-action="ApxReports" method="post">
+<form asp-controller="Reports" asp-action="PortfolioReports" method="post">
     <div class="row">
         <div class="col-md-3">
             <label>Portfolio</label>
@@ -47,13 +47,13 @@
                 </td>
                 <td>
                     @*Ver Reporte*@
-                    <a class="btn btn-primary float-left" target="_blank" href="@Url.Action("ViewReport", "ApxReports", new { portfolio = item.Portfolio, report = item.Report })">
+                    <a class="btn btn-primary float-left" target="_blank" href="@Url.Action("ViewPortfolioReport", "Reports", new { portfolio = item.Portfolio, report = item.Report })">
                         Ver Reporte
                     </a>
                 </td>
                 <td>
                     @*Ver Errores*@
-                    <a class="btn-link" target="_blank" href="@Url.Action("ViewErrors", "ApxReports", new { portfolio = item.Portfolio, report = item.Report })">
+                    <a class="btn-link" target="_blank" href="@Url.Action("ViewPortfolioReportErrors", "Reports", new { portfolio = item.Portfolio, report = item.Report })">
                         Ver Errores
                     </a>
                 </td>

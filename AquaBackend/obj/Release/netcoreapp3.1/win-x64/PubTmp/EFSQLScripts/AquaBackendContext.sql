@@ -67,3 +67,30 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200407144243_prices')
+BEGIN
+    CREATE TABLE [Price] (
+        [Id] int NOT NULL IDENTITY,
+        [SecTypeBaseCode] nvarchar(max) NULL,
+        [PrincipalCurrencyCode] nvarchar(max) NULL,
+        [Symbol] nvarchar(max) NULL,
+        [FullName] nvarchar(max) NULL,
+        [MaturityDate] datetime2 NOT NULL,
+        [RiskCountryCode] nvarchar(max) NULL,
+        [FromDate] datetime2 NOT NULL,
+        [ThruDate] datetime2 NOT NULL,
+        [PriceValue] real NOT NULL,
+        CONSTRAINT [PK_Price] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200407144243_prices')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200407144243_prices', N'3.1.1');
+END;
+
+GO
+

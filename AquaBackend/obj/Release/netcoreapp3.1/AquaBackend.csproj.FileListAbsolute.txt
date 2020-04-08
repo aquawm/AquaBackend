@@ -306,9 +306,6 @@ C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\AquaBackend.TagHelpers.input.cache
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\AquaBackend.TagHelpers.output.cache
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\AquaBackend.RazorCoreGenerate.cache
-C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\ApxReports\ApxReports.cshtml.g.cs
-C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\ApxReports\Error.cshtml.g.cs
-C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\ApxReports\ViewErrors.cshtml.g.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -331,3 +328,8 @@ C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\Clients\Edit.cshtml.g.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\Clients\Index.cshtml.g.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\MarketSummaries\ViewMarketSummaries.cshtml.g.cs
+C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\Prices\Prices.cshtml.g.cs
+C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\Reports\Error.cshtml.g.cs
+C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\Reports\GeneralReports.cshtml.g.cs
+C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\Reports\PortfolioReports.cshtml.g.cs
+C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\Reports\ViewPortfolioReportErrors.cshtml.g.cs
