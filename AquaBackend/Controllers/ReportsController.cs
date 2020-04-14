@@ -21,15 +21,7 @@ namespace AquaBackend.Controllers
                 portfolio = portfolio.Replace(" ", "_");
             }
 
-            if (System.IO.File.Exists(@"\\srv-app\apx$\Reportes\Portfolios\Portfolios.txt"))
-            {
-                IEnumerable<string> portfoliosList = System.IO.File.ReadLines(@"\\srv-app\apx$\Reportes\Portfolios\Portfolios.txt");
-                ViewBag.portfolios = portfoliosList;
-            }
-            else
-            {
-                return RedirectToAction("Error", new { errorDescription = "No se encuentra el archivo Portafolios.txt, comuniquese con el area técnica para resolver este problema" });
-            }
+            ViewBag.portfolios = PortfoliosListFromFiles();
 
             List<Reports> PortfolioReports = new List<Reports>();
 
@@ -39,9 +31,9 @@ namespace AquaBackend.Controllers
             }
             else
             {
-                var files = System.IO.Directory.GetFiles(@"\\srv-app\apx$\Reportes\Portfolios", String.Format("*{0}.pdf", portfolio), System.IO.SearchOption.AllDirectories);
+                var files_ = System.IO.Directory.GetFiles(@"\\srv-app\apx$\Reportes\Portfolios", String.Format("*{0}.pdf", portfolio), System.IO.SearchOption.AllDirectories);
 
-                foreach (var file in files)
+                foreach (var file in files_)
                 {
                     string[] splitBarra = file.Split(@"\");
                     string resultBarra = splitBarra.Last();
@@ -63,6 +55,7 @@ namespace AquaBackend.Controllers
                         Url = file,
                         LastUpdate = lastUpdate
                     };
+                    
                     PortfolioReports.Add(Report);
                 }
                 return View(PortfolioReports);
@@ -123,7 +116,7 @@ namespace AquaBackend.Controllers
             report = report.Replace(" ", "_");
             description = description.Replace(" ", "_");
             String path = @"\\srv-app\apx$\Reportes\Generales\";
-            String file = (String.Format("{0}-{1}.pdf", report,description));
+            String file = (String.Format("{0}-{1}.pdf", report, description));
 
             if (System.IO.File.Exists(String.Format("{0}{1}", path, file)))
             {
@@ -155,10 +148,38 @@ namespace AquaBackend.Controllers
             }
         }
 
+
         public IActionResult Error(String errorDescription)
         {
             ViewBag.ErrorDescription = errorDescription;
             return View();
+        }
+
+        private List<string> PortfoliosListFromFiles()
+        {
+            List<string> portfoliosList = new List<string>();
+
+            var files = System.IO.Directory.GetFiles(@"\\srv-app\apx$\Reportes\Portfolios", "*.pdf", System.IO.SearchOption.TopDirectoryOnly);
+
+            foreach (var file in files)
+            {
+                string[] splitBarra = file.Split(@"\");
+                string resultBarra = splitBarra.Last();
+
+                string[] splitPunto = resultBarra.Split(".");
+                string resultPunto = splitPunto.First();
+
+                string[] splitGuion = resultPunto.Split("-");
+
+                string report = splitGuion[0];
+                string reportPortfolio = splitGuion[1].Replace("_", " ");               
+
+                portfoliosList.Add(reportPortfolio);
+            }
+            // Quito duplicados de la lista y la ordeno.
+            List<string> distinctPortfolioList = portfoliosList.Distinct().OrderBy(x => x.ToString()).ToList();
+            return distinctPortfolioList;
+            
         }
     }
 }
