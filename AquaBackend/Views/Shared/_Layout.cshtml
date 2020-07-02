@@ -23,15 +23,18 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reportes</a> 
-                            <div class="dropdown-menu">
+                            <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reportes</a>
+                            <div class="dropdown-menu w-100">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Reports" asp-action="PortfolioReports">Portfolios</a>
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Reports" asp-action="GeneralReports">Generales</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Reports" asp-action="FundFactsheetReports">Factsheet de Fondos</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Reports" asp-action="FundPerformanceReports">Performance Review de Fondos</a>
+
                             </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Información</a>
-                            <div class="dropdown-menu">
+                            <div class="dropdown-menu submenu">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Transactions" asp-action="Transactions">Transacciones</a>
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Prices" asp-action="Prices">Precios</a>
                             </div>
@@ -65,6 +68,7 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Clients" asp-action="Index">Clientes</a>
                             </div>
                         </li>
+
                     </ul>
                 </div>
             </div>

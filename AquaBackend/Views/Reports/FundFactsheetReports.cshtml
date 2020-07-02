@@ -1,0 +1,45 @@
+﻿@model IEnumerable<AquaBackend.Models.Reports>
+@{
+    ViewData["Title"] = "Factsheet Aqua";
+}
+
+<h3>Reportes</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Fondo
+            </th>
+            <th>
+                Fecha
+            </th>
+            <th>
+                Ultima Actualización
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Report
+                </td>
+                <td>
+                    @item.Description
+                </td>
+                <td>
+                    @item.LastUpdate
+                </td>
+                <td>
+                    @*Ver Reporte*@
+                    <a class="btn btn-primary float-left" target="_blank" href="@Url.Action("ViewFundFactsheetReport", "Reports", new { description = item.Description, report = item.Report })">
+                        Ver Reporte
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

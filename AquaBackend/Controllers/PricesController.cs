@@ -20,8 +20,16 @@ namespace AquaBackend.Controllers
         {
             if (dateFrom == null)
             {
-                dateFrom = DateTime.Today.AddDays(-1);
+                if (DateTime.Today.DayOfWeek.Equals(DayOfWeek.Monday))
+                {
+                    dateFrom = DateTime.Today.AddDays(-3);
+                }
+                else
+                {
+                    dateFrom = DateTime.Today.AddDays(-1);
+                }
             }
+
             if (dateTo == null)
             {
                 dateTo = DateTime.Today;

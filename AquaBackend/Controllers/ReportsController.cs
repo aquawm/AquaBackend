@@ -55,7 +55,7 @@ namespace AquaBackend.Controllers
                         Url = file,
                         LastUpdate = lastUpdate
                     };
-                    
+
                     PortfolioReports.Add(Report);
                 }
                 return View(PortfolioReports);
@@ -67,6 +67,72 @@ namespace AquaBackend.Controllers
             List<Reports> Reports = new List<Reports>();
 
             var files = System.IO.Directory.GetFiles(@"\\srv-app\apx$\Reportes\Generales\");
+
+            foreach (var file in files)
+            {
+                string[] splitBarra = file.Split(@"\");
+                string resultBarra = splitBarra.Last();
+
+                string[] splitPunto = resultBarra.Split(".");
+                string resultPunto = splitPunto.First();
+
+                string[] splitGuion = resultPunto.Split("-");
+
+                string report = splitGuion[0];
+                string description = splitGuion[1];
+
+                DateTime lastUpdate = System.IO.File.GetLastWriteTime(file);
+
+                Reports Report = new Reports
+                {
+                    Description = description.Replace("_", " "),
+                    Report = report.Replace("_", " "),
+                    Url = file,
+                    LastUpdate = lastUpdate
+                };
+                Reports.Add(Report);
+            }
+            return View(Reports);
+        }
+
+        public IActionResult FundFactsheetReports()
+        {
+            List<Reports> Reports = new List<Reports>();
+
+            var files = System.IO.Directory.GetFiles(@"\\srv-app\apx$\Reportes\Fondos\Factsheet Aqua");
+
+            foreach (var file in files)
+            {
+                string[] splitBarra = file.Split(@"\");
+                string resultBarra = splitBarra.Last();
+
+                string[] splitPunto = resultBarra.Split(".");
+                string resultPunto = splitPunto.First();
+
+                string[] splitGuion = resultPunto.Split("-");
+
+                string report = splitGuion[0];
+                string description = splitGuion[1];
+
+                DateTime lastUpdate = System.IO.File.GetLastWriteTime(file);
+
+                Reports Report = new Reports
+                {
+                    Description = description.Replace("_", " "),
+                    Report = report.Replace("_", " "),
+                    Url = file,
+                    LastUpdate = lastUpdate
+                };
+                Reports.Add(Report);
+            }
+            return View(Reports);
+        }
+
+        public IActionResult FundPerformanceReports()
+        {
+            List<Reports> Reports = new List<Reports>();
+
+            var files = System.IO.Directory.GetFiles(@"\\srv-app\apx$\Reportes\Fondos\Performance Review");
 
             foreach (var file in files)
             {
@@ -128,6 +194,40 @@ namespace AquaBackend.Controllers
             }
         }
 
+        public IActionResult ViewFundFactsheetReport(String description, String report)
+        {
+            report = report.Replace(" ", "_");
+            description = description.Replace(" ", "_");
+            String path = @"\\srv-app\apx$\Reportes\Fondos\Factsheet Aqua\";
+            String file = (String.Format("{0}-{1}.pdf", report, description));
+
+            if (System.IO.File.Exists(String.Format("{0}{1}", path, file)))
+            {
+                return new PhysicalFileResult(String.Format("{0}{1}", path, file), "application/pdf");
+            }
+            else
+            {
+                return RedirectToAction("Error", new { errorDescription = "No se encuentra el reporte solicitado. " + String.Format("{0}{1}", path, file) });
+            }
+        }
+
+        public IActionResult ViewFundPerformanceReport(String description, String report)
+        {
+            report = report.Replace(" ", "_");
+            description = description.Replace(" ", "_");
+            String path = @"\\srv-app\apx$\Reportes\Fondos\Performance Review\";
+            String file = (String.Format("{0}-{1}.pdf", report, description));
+
+            if (System.IO.File.Exists(String.Format("{0}{1}", path, file)))
+            {
+                return new PhysicalFileResult(String.Format("{0}{1}", path, file), "application/pdf");
+            }
+            else
+            {
+                return RedirectToAction("Error", new { errorDescription = "No se encuentra el reporte solicitado. " + String.Format("{0}{1}", path, file) });
+            }
+        }
+
         public IActionResult ViewPortfolioReportErrors(String portfolio, String report)
         {
             portfolio = portfolio.Replace(" ", "_");
@@ -172,14 +272,13 @@ namespace AquaBackend.Controllers
                 string[] splitGuion = resultPunto.Split("-");
 
                 string report = splitGuion[0];
-                string reportPortfolio = splitGuion[1].Replace("_", " ");               
+                string reportPortfolio = splitGuion[1].Replace("_", " ");
 
                 portfoliosList.Add(reportPortfolio);
             }
             // Quito duplicados de la lista y la ordeno.
             List<string> distinctPortfolioList = portfoliosList.Distinct().OrderBy(x => x.ToString()).ToList();
             return distinctPortfolioList;
-            
         }
     }
 }
