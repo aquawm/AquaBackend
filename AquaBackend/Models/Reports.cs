@@ -14,5 +14,8 @@ namespace AquaBackend.Models
         public String Report { get; set; }
         public String Url { get; set; }
         public DateTime LastUpdate { get; set; }
+        public String Custom1 { get; set; }
+        public String Custom2 { get; set; }
+        public String Custom3 { get; set; }
     }
 }
