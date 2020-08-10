@@ -151,8 +151,10 @@ namespace AquaBackend.Controllers
 
                 string[] splitGuion = resultPunto.Split("-");
 
-                string report = splitGuion[0];
-                string description = splitGuion[1];
+                string assetClass = splitGuion[0];
+                string subAssetClass = splitGuion[1];
+                string report = splitGuion[2];
+                string description = splitGuion[3];
 
                 DateTime lastUpdate = System.IO.File.GetLastWriteTime(file);
 
@@ -161,7 +163,9 @@ namespace AquaBackend.Controllers
                     Description = description.Replace("_", " "),
                     Report = report.Replace("_", " "),
                     Url = file,
-                    LastUpdate = lastUpdate
+                    LastUpdate = lastUpdate,
+                    Custom1 = assetClass.Replace("_", " "),
+                    Custom2 = subAssetClass.Replace("_", " ")
                 };
                 Reports.Add(Report);
             }
@@ -221,12 +225,15 @@ namespace AquaBackend.Controllers
             }
         }
 
-        public IActionResult ViewFundPerformanceReport(String description, String report)
+        public IActionResult ViewFundPerformanceReport(String description, String report, String custom1, String custom2)
         {
             report = report.Replace(" ", "_");
             description = description.Replace(" ", "_");
+            custom1 = custom1.Replace(" ", "_");
+            custom2 = custom2.Replace(" ", "_");
+
             String path = @"\\srv-app\apx$\Reportes\Fondos\Performance Review\";
-            String file = (String.Format("{0}-{1}.pdf", report, description));
+            String file = (String.Format("{0}-{1}-{2}-{3}.pdf", custom1, custom2, report, description));
 
             if (System.IO.File.Exists(String.Format("{0}{1}", path, file)))
             {

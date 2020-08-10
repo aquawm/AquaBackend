@@ -9,6 +9,12 @@
     <thead>
         <tr>
             <th>
+                Asset Class
+            </th>
+            <th>
+                Sub Asset Class
+            </th>
+            <th>
                 Fondo
             </th>
             <th>
@@ -23,23 +29,29 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @item.Report
-                </td>
-                <td>
-                    @item.Description
-                </td>
-                <td>
-                    @item.LastUpdate
-                </td>
-                <td>
-                    @*Ver Reporte*@
-                    <a class="btn btn-primary float-left" target="_blank" href="@Url.Action("ViewFundPerformanceReport", "Reports", new { description = item.Description, report = item.Report })">
-                        Ver Reporte
-                    </a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @item.Custom1
+            </td>
+            <td>
+                @item.Custom2
+            </td>
+            <td>
+                @item.Report
+            </td>
+            <td>
+                @item.Description
+            </td>
+            <td>
+                @item.LastUpdate
+            </td>
+            <td>
+                @*Ver Reporte*@
+                <a class="btn btn-primary float-left" target="_blank" href="@Url.Action("ViewFundPerformanceReport", "Reports", new { description = item.Description, report = item.Report, custom1 = item.Custom1, custom2 = item.Custom2 })">
+                    Ver Reporte
+                </a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
