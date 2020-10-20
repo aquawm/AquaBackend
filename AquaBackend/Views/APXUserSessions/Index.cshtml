@@ -1,0 +1,43 @@
+﻿@model IEnumerable<AquaBackend.Models.APXUserSession>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>¿Quien esta logeado en APX?</h3>
+
+<p>Para actualizar la información debe apretar F5 o recargar esta pagina nuevamente.</p>
+<p>Si no aparecen resultados es que no hay nadie en APX.</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Created)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastTouched)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastTouched)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
