@@ -8,15 +8,4 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>M:\Tecnología\Releases\AquaBackend</_PublishTargetUrl>
   </PropertyGroup>
-  <ItemGroup>
-    <DestinationConnectionStrings Include="AquaBackendContext">
-      <Value>data source=192.168.1.7%3binitial catalog=AquaBackend%3bIntegrated Security=SSPI%3bPersist Security Info=False%3bmultipleactiveresultsets=True%3bapplication name=AquaBackend</Value>
-    </DestinationConnectionStrings>
-  </ItemGroup>
-  <ItemGroup>
-    <EFMigrations Include="AquaBackendContext">
-      <Value>
-      </Value>
-    </EFMigrations>
-  </ItemGroup>
 </Project>

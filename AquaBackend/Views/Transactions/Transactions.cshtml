@@ -15,10 +15,10 @@
         </div>
         <div class="col-md-3">
             <label>Fecha Desde</label>
-            <input class="form-control" type="date" name="dateFrom" />
+            <input class="form-control" type="date" name="dateFrom" value="@DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd")"/>
 
             <label>Fecha Hasta</label>
-            <input class="form-control" type="date" name="dateTo" />
+            <input class="form-control" type="date" name="dateTo" value="@DateTime.Today.ToString("yyyy-MM-dd")"  />
 
             <button class="btn btn-primary" type="submit" style="display: inline;">Buscar</button>
 
@@ -51,10 +51,10 @@
                 @Html.DisplayNameFor(model => model.FullName2)
             </th>
 
-            <th>
+            <th style="width:150px">
                 @Html.DisplayNameFor(model => model.TradeDate)
             </th>
-            <th>
+            <th style="width:150px">
                 @Html.DisplayNameFor(model => model.SettleDate)
             </th>
             <th>
@@ -63,9 +63,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.TradeAmount)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.UnitPrice)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Comment)
             </th>
@@ -82,7 +82,7 @@
                         @Html.DisplayFor(modelItem => item.PortfolioCode)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.TranCodeLabel)
+                        @Html.DisplayFor(modelItem => item.TransactionCode)
                     </td>
                     <td>
                         @String.Format("{0}{1}", item.SecTypeCode1, item.PrincipalCurrencyCode1)
@@ -106,29 +106,17 @@
                         @Html.DisplayFor(modelItem => item.TradeDate)
                     </td>
                     <td>
-                        @if (item.SettleDate > DateTime.Parse("1900-01-01"))
-                        {
-                            @Html.DisplayFor(modelItem => item.SettleDate)
-                        }
+                        @Html.DisplayFor(modelItem => item.SettleDate)
                     </td>
                     <td>
-                        @if (@item.Quantity > 0)
-                        {
-                            @Html.DisplayFor(modelItem => item.Quantity);
-                        }
+                        @Html.DisplayFor(modelItem => item.Quantity)
                     </td>
                     <td>
-                        @if (item.TradeAmount > 0)
-                        {
-                            @Html.DisplayFor(modelItem => item.TradeAmount)
-                        }
+                        @Html.DisplayFor(modelItem => item.TradeAmount)
                     </td>
-                    <td>
-                        @if (item.UnitPrice > 0)
-                        {
-                            @Html.DisplayFor(modelItem => item.UnitPrice)
-                        }
-                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.UnitPrice)
+                    </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.Comment)
                     </td>

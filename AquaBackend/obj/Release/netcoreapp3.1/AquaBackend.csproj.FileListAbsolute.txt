@@ -348,3 +348,4 @@ C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\bin\Release\netcoreapp3.
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\AquaBackend.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\Reports\FundFactsheetReports.cshtml.g.cs
 C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\Reports\FundPerformanceReports.cshtml.g.cs
+C:\Users\lmachado\source\Aquawm\AquaBackend\AquaBackend\obj\Release\netcoreapp3.1\Razor\Views\APXUserSessions\Index.cshtml.g.cs

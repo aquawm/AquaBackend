@@ -58,6 +58,9 @@ namespace AquaBackend.Migrations
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<float>("InterestRate")
+                        .HasColumnType("real");
+
                     b.Property<DateTime>("MaturityDate")
                         .HasColumnType("datetime2");
 

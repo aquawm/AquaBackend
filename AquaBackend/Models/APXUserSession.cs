@@ -8,6 +8,7 @@ namespace AquaBackend.Models
     [NotMapped]
     public class APXUserSession
     {
+        [NotMapped]
         public String SessionID { get; set; }
         [DisplayName("Nombre")]
         public String FullName { get; set; }

@@ -35,6 +35,7 @@ namespace AquaBackend.Controllers
                     };
                     UserSessions.Add(APXUserSession);
                 }
+                sqlConnection.Close();
             }
             return View(UserSessions);
         }

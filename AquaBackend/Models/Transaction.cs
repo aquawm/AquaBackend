@@ -40,22 +40,22 @@ namespace AquaBackend.Models
 
         public String PrincipalCurrencyCode2 { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime TradeDate { get; set; }
+        //[DataType(DataType.Date)]
+        public String TradeDate { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime SettleDate { get; set; }
+        //[DataType(DataType.Date)]
+        public String SettleDate { get; set; }
 
-        public float Quantity { get; set; }
-
-        [DataType(DataType.Currency)]
-        public float TradeAmount { get; set; }
+        public String Quantity { get; set; }
 
         [DataType(DataType.Currency)]
-        public float UnitPrice { get; set; }
+        public String TradeAmount { get; set; }
+
+        [DataType(DataType.Currency)]
+        public String UnitPrice { get; set; }
 
         public String Comment { get; set; }
 
-        public int PortfolioTransactionID { get; set; }
+        public String PortfolioTransactionID { get; set; }
     }
 }

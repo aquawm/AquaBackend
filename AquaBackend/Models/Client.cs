@@ -7,7 +7,7 @@ namespace AquaBackend.Models
 {
     public class Client
     {
-        [Key]
+        //[Key]
         public int Id { get; set; }
 
         [DisplayName("Nombre")]
@@ -30,7 +30,7 @@ namespace AquaBackend.Models
         {
             get
             {
-                return string.Format("{0} - {1} ({2})", Name, Bank, Portfolio);
+                return string.Format("{0} - {1}", Portfolio, Name);
             }
         }
     }
