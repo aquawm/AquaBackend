@@ -106,8 +106,8 @@ namespace AquaBackend.Controllers
                             PrincipalCurrencyCode2 = reader[10].ToString(),
                             TradeDate = TradeDate,
                             SettleDate = SettleDate,
-                            Quantity = Quantity.ToString("#,##0"),
-                            TradeAmount = TradeAmount.ToString("#,##0"),
+                            Quantity = Quantity.ToString("#,##0.00"),
+                            TradeAmount = TradeAmount.ToString("#,##0.00"),
                             //UnitPrice = reader[15].ToString(),
                             Comment = reader[16].ToString(),
                             PortfolioTransactionID = reader[17].ToString()

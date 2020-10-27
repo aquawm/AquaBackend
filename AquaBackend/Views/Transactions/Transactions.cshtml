@@ -109,14 +109,14 @@
                         @Html.DisplayFor(modelItem => item.SettleDate)
                     </td>
                     <td>
-                        @if (item.Quantity != "-1")
+                        @if (item.Quantity != "-1,00")
                         {
                             @Html.DisplayFor(modelItem => item.Quantity)
                         }
 
                     </td>
                     <td>
-                        @if (item.TradeAmount != "-1")
+                        @if (item.TradeAmount != "-1,00")
                         {
                             @Html.DisplayFor(modelItem => item.TradeAmount)
                         }
