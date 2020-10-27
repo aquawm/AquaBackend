@@ -52,7 +52,7 @@ namespace AquaBackend.Models
         public String TradeAmount { get; set; }
 
         [DataType(DataType.Currency)]
-        public String UnitPrice { get; set; }
+        public decimal UnitPrice { get; set; }
 
         public String Comment { get; set; }
 

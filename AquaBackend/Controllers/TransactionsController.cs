@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
-using Microsoft.Data.SqlClient.Server;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -74,7 +73,7 @@ namespace AquaBackend.Controllers
                             vap.PortfolioCode = '{0}' AND
                             pt.TradeDate >= '{1}' AND 
                             pt.TradeDate <= '{2}' 
-                            order by pt.PortfolioTransactionID desc", portfolio,dateFrom.ToString("yyyy-MM-dd"),dateTo.ToString("yyyy-MM-dd")),
+                            order by pt.PortfolioTransactionID desc", portfolio, dateFrom.ToString("yyyy-MM-dd"), dateTo.ToString("yyyy-MM-dd")),
                         CommandType = CommandType.Text,
                         Connection = sqlConnection
                     };
@@ -85,23 +84,12 @@ namespace AquaBackend.Controllers
                     {
                         String TradeDate;
                         String SettleDate;
-                        if (reader[11].ToString().Equals(""))
-                            {
-                                TradeDate = null;                            
-                            }
-                            else
-                            {
-                                TradeDate = Convert.ToDateTime(reader[11]).ToString("dd-MM-yyyy");
-                            }
-
-                        if (reader[12].ToString().Equals(""))
-                            {
-                                SettleDate = null;
-                            }
-                            else
-                            {
-                                SettleDate = Convert.ToDateTime(reader[12]).ToString("dd-MM-yyyy");
-                            }
+                        Decimal TradeAmount;
+                        Decimal Quantity;
+                        if (reader[11].ToString().Equals("")) TradeDate = null; else TradeDate = Convert.ToDateTime(reader[11]).ToString("dd-MM-yyyy");
+                        if (reader[12].ToString().Equals("")) SettleDate = null; else SettleDate = Convert.ToDateTime(reader[12]).ToString("dd-MM-yyyy");
+                        if (reader[13].ToString().Equals("")) Quantity = -1; else Quantity = Convert.ToDecimal(reader[13]);
+                        if (reader[14].ToString().Equals("")) TradeAmount = -1; else TradeAmount = Convert.ToDecimal(reader[14]);
 
                         Transaction transaction = new Transaction
                         {
@@ -115,12 +103,12 @@ namespace AquaBackend.Controllers
                             SecTypeCode2 = reader[7].ToString(),
                             Symbol2 = reader[8].ToString(),
                             FullName2 = reader[9].ToString(),
-                            PrincipalCurrencyCode2 = reader[10].ToString(),                          
+                            PrincipalCurrencyCode2 = reader[10].ToString(),
                             TradeDate = TradeDate,
                             SettleDate = SettleDate,
-                            Quantity = reader[13].ToString(),
-                            TradeAmount = reader[14].ToString(),
-                            UnitPrice = reader[15].ToString(),
+                            Quantity = Quantity.ToString("#,##0"),
+                            TradeAmount = TradeAmount.ToString("#,##0"),
+                            //UnitPrice = reader[15].ToString(),
                             Comment = reader[16].ToString(),
                             PortfolioTransactionID = reader[17].ToString()
                         };

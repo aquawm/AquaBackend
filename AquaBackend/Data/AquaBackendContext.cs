@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using AquaBackend.Models;
 
 public class AquaBackendContext : DbContext
 {

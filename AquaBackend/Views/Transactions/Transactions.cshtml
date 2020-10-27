@@ -64,8 +64,8 @@
                 @Html.DisplayNameFor(model => model.TradeAmount)
             </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.UnitPrice)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.UnitPrice)
+                </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Comment)
             </th>
@@ -109,14 +109,22 @@
                         @Html.DisplayFor(modelItem => item.SettleDate)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Quantity)
+                        @if (item.Quantity != "-1")
+                        {
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        }
+
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.TradeAmount)
+                        @if (item.TradeAmount != "-1")
+                        {
+                            @Html.DisplayFor(modelItem => item.TradeAmount)
+                        }
+
                     </td>
                     @*<td>
-                        @Html.DisplayFor(modelItem => item.UnitPrice)
-                    </td>*@
+                            @Html.DisplayFor(modelItem => item.UnitPrice)
+                        </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.Comment)
                     </td>
