@@ -38,7 +38,7 @@ namespace AquaBackend.Controllers
                     using var cmd = new SqlCommand()
                     {
                         CommandText = String.Format(@"SELECT
-                        vap.PortfolioCode,
+                        vap.PortfolioBaseCode as PortfolioCode ,
                         pt.TransactionCode,
                         tc.TranCodeLabel,
                         pt.SecTypeCode1,
@@ -58,19 +58,16 @@ namespace AquaBackend.Controllers
                         pt.PortfolioTransactionID
                         FROM
                             APXFirm.dbo.AdvPortfolioTransaction pt
-                        left join APXFirm.dbo.vpAdvPortfolio vap on
-
-                            pt.PortfolioID = vap.PortfolioID
+                        left join APXFirm.AdvApp.vPortfolioBase vap on
+                            pt.PortfolioID = vap.PortfolioBaseID 
                         left join APXFirm.dbo.AdvTransactionCode tc on
-
                             pt.TransactionCode = tc.TransactionCode
                         left join APXFirm.dbo.AdvSecurity vs1 on
-
                             pt.SecurityID1 = vs1.SecurityID
                         left join APXFirm.dbo.AdvSecurity vs2 on
                             pt.SecurityID2 = vs2.SecurityID
                         where
-                            vap.PortfolioCode = '{0}' AND
+                            vap.PortfolioBaseCode = '{0}' AND
                             pt.TradeDate >= '{1}' AND 
                             pt.TradeDate <= '{2}' 
                             order by pt.PortfolioTransactionID desc", portfolio, dateFrom.ToString("yyyy-MM-dd"), dateTo.ToString("yyyy-MM-dd")),
